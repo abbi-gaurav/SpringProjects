@@ -16,11 +16,11 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableAutoConfiguration
 @EnableMongoRepositories(value = "com.learn.spring.repository")
-@ComponentScan(basePackages = {"com.learn.spring.controller", "com.learn.spring.repository"})
+@ComponentScan(basePackages = {"com.learn.spring.controller"})
 public class Application {
     public static void main(String[] args) {
         ApplicationContext applicationContext = SpringApplication.run(Application.class, args);
-        System.out.println(" printing bean names");
+
         String[] beanNames = applicationContext.getBeanDefinitionNames();
         for (String beanName : beanNames) {
             System.out.println(beanName);
