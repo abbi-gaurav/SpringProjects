@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by gabbi on 19.06.15.
+ * ss
  */
 @RestController
 @RequestMapping(value = "/contacts")
