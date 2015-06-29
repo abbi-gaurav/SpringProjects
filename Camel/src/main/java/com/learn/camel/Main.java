@@ -1,5 +1,10 @@
 package com.learn.camel;
 
+import com.learn.camel.model.PersonModel;
+import com.learn.camel.processors.OrgDataProcessor;
+import com.learn.camel.processors.PersonDataProcessor;
+import com.learn.camel.workers.OrgDataFetch;
+import com.learn.camel.workers.PersonDataFetch;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
@@ -26,6 +31,7 @@ public class Main {
                             .to("direct:person", "direct:org")
                             .end();
                     from("direct:person")
+                            .pipeline()
                             .to("bean:personFetch?method=fetch")
                             .setProperty("persons", body())
                             .process(new PersonDataProcessor())
@@ -35,6 +41,7 @@ public class Main {
                             .end();
 
                     from("direct:org")
+                            .pipeline()
                             .to("bean:orgFetch?method=fetch")
                             .setProperty("orgs", body())
                             .process(new OrgDataProcessor())

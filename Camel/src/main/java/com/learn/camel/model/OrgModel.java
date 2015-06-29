@@ -1,4 +1,4 @@
-package com.learn.camel;
+package com.learn.camel.model;
 
 /**
  * Created by gabbi on 29.06.15.

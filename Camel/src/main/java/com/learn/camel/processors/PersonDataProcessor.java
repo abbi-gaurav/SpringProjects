@@ -1,5 +1,6 @@
-package com.learn.camel;
+package com.learn.camel.processors;
 
+import com.learn.camel.model.PersonModel;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 

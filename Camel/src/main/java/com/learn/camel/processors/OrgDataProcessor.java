@@ -1,4 +1,4 @@
-package com.learn.camel;
+package com.learn.camel.processors;
 
 import org.apache.camel.Exchange;
 
